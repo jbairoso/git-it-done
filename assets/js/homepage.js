@@ -5,11 +5,12 @@ var repoSearchTermEl=document.querySelector("#repo-search-term");
 
 var formSubmitHandler=function(event){
     event.preventDefault();
-    // get value from input element
-  var username = nameInputEl.value.trim();
 
-  if (username) {
-   getUserRepos(username);
+// get value from input element
+    var username = nameInputEl.value.trim();
+
+    if (username) {
+    getUserRepos(username);
 //clear old content
 repoContainerEl.textContent="";
   nameInputEl.value = "";
@@ -19,7 +20,7 @@ repoContainerEl.textContent="";
 };
 
 var getUserRepos = function(user) {
-    // format the github api url
+// format the github api url
     var apiUrl = "https://api.github.com/users/" + user + "/repos";
   
 // make a request to the url
